@@ -1,4 +1,4 @@
-from zaraapp import app
+from zapp import app
 
 if __name__ == "__main__":
     app.run()
