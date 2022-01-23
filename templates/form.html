@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login form</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
 </head>
 <body>
-$END$
+
+<div class="container mt-4">
+<h1>Your present!</h1>
+    <div class="col-sm-6 col-12">
+    {% if checked %}
+      <a href="https://www.buyatab.com/gcp/ecard.aspx?Id=He6lj06DdEiEpAGEeRgwFA%3D%3D&lang=en" class="btn btn-primary">Click here</a>
+    {% else %}
+        <p>Enter your username and password to view the url</p>
+        {% if error %}<em class="text-danger">{{ error }}</em>{% endif %}
+
+
+    <form method="post">
+      <div class="form-group">
+        <label for="username_input">Username</label>
+        <input type="text" class="form-control" id="username_input" aria-describedby="emailHelp" name="username" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="password_input">Password</label>
+        <input type="password" class="form-control" id="password_input" name="password" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+{% endif %}
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    </div>
 </body>
+
+
 </html>
